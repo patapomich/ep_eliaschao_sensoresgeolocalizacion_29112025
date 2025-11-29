@@ -27,16 +27,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         EJEX = findViewById(R.id.EJEX);
         EJEY = findViewById(R.id.EJEY);
         EJEZ = findViewById(R.id.EJEZ);
-        estadoAce = findViewById(R.id.estadoAce);
 
         gestorSensores = (SensorManager) getSystemService(SENSOR_SERVICE);
 
         sensorAcelerometro = gestorSensores.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         if (sensorAcelerometro != null) {
-            gestorSensores.registerListener((SensorEventListener) this, sensorAcelerometro, SensorManager.SENSOR_DELAY_NORMAL);
+            gestorSensores.registerListener(this, sensorAcelerometro, SensorManager.SENSOR_DELAY_NORMAL);
         } else {
-            Toast.makeText(this, "No hay sensor magnético", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No hay sensor de luz", Toast.LENGTH_LONG).show();
             estadoAce.setText("Sensor no disponible");
         }
 
@@ -45,16 +44,16 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
 
     @Override
-    public void onSensorChanged(SensorEvent sensorEvent) {
+    public void onSensorChanged(SensorEvent event) {
 
-        if (sensorEvent.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
-            float x = sensorEvent.values[0];
-            float y = sensorEvent.values[1];
-            float z = sensorEvent.values[2];
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+            float x = event.values[0];
+            float y = event.values[1];
+            float z = event.values[2];
 
-            EJEX.setText(String.format("%", x));
-            EJEY.setText(String.format("%", y));
-            EJEZ.setText(String.format("%T", z));
+            EJEX.setText(String.format("%.2f µT", x));
+            EJEY.setText(String.format("%.2f µT", y));
+            EJEZ.setText(String.format("%.2f µT", z));
 
         }
 
@@ -67,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     protected void onResume() {
+        super.onResume();
         if (sensorAcelerometro != null) {
             gestorSensores.registerListener(this, sensorAcelerometro, SensorManager.SENSOR_DELAY_NORMAL);
         }

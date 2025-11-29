@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!-- SENSOR 3: MAGNÉTICO -->
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -28,107 +27,106 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
                     android:text="SENSOR ACELEROMETRO"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     android:textColor="#51CF66"
-                    android:layout_marginBottom="12dp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Eje X:"
+                        android:textColor="#FF6B6B"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#FF6B6B" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/EJEX"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
                         android:text="0.00 µT"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="monospace" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp"
                     android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Eje Y:"
+                        android:textColor="#51CF66"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#51CF66" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/EJEY"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
                         android:text="0.00 µT"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="monospace" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:background="@drawable/coord_background"
-                    android:padding="12dp"
                     android:layout_marginBottom="12dp"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <TextView
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Eje Z:"
+                        android:textColor="#4DABF7"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#4DABF7" />
+                        android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/EJEZ"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="monospace"
                         android:text="0.00 µT"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
                         android:textColor="#FFFFFF"
-                        android:fontFamily="monospace" />
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/estadoAce"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="ejes: "
-                    android:textSize="16sp"
-                    android:textColor="#E0E0E0"
                     android:gravity="center"
-                    android:padding="12dp" />
+                    android:padding="12dp"
+                    android:text="ejes: "
+                    android:textColor="#E0E0E0"
+                    android:textSize="16sp" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
